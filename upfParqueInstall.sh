@@ -58,17 +58,17 @@ apt-get -y update
 apt-get -y upgrade
 
 libCppdev=`apt-cache search libstdc++ | grep "libstdc++6-.*-dev " | sort | tail -n1 | cut -d' ' -f1`
-if [ "$libCppdev" == "" ]; then
+if [ "$libCppdev" = "" ]; then
   echo "libstdc++6-*-dev not found"
   exit 1
 fi
 libCppdbg=`apt-cache search libstdc++ | grep "libstdc++6-.*-dbg " | sort | tail -n1 | cut -d' ' -f1`
-if [ "$libCppdbg" == "" ]; then
+if [ "$libCppdbg" = "" ]; then
   echo "libstdc++6-*-dbg not found"
   exit 1
 fi
 libCppdoc=`apt-cache search libstdc++ | grep "libstdc++6-.*-doc " | sort | tail -n1 | cut -d' ' -f1`
-if [ "$libCppdoc" == "" ]; then
+if [ "$libCppdoc" = "" ]; then
   echo "libstdc++6-*-doc not found"
   exit 1
 fi
@@ -78,16 +78,13 @@ echo "================= installing packages for UPF Parque ================"
 echo "====================================================================="
 
 apt-get -y install zenity apache2 eclipse-pde eclipse-rcp eclipse-platform eclipse-jdt eclipse-cdt eclipse emacs \
-  g++ gcc libstdc++6 makepasswd manpages-dev openjdk-8-dbg openjdk-8-jdk \
-  mysql-server mysql-client pgadmin3 php-cli php-mcrypt php php-pgsql php-gd \
-  postgresql postgresql-client postgresql-contrib default-jdk openjdk-8-doc \
-  vim-gnome geany geany-plugin-addons geany-plugins geany-plugin-debugger default-jre \
-  vim "$libCppdev" "$libCppdoc" "$libCppdbg" stl-manual gcc-doc c++-annotations \
-  libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 \
-  libxss1 libappindicator1 libindicator7 fonts-liberation kio-gdrive \
-  android-studio atom htop netbeans nodejs npm sublime-text-installer terminator \
-  libreoffice libreoffice-kde kate skanlite 
-## quota sharutils sysstat debootstrap schroot
+  build-essential libstdc++6 makepasswd manpages-dev openjdk-8-dbg openjdk-8-jdk mysql-server mysql-client \
+  pgadmin3 php-cli php-mcrypt php php-pgsql php-gd postgresql postgresql-client postgresql-contrib \
+  default-jdk openjdk-8-doc vim-gnome geany geany-plugin-addons geany-plugins geany-plugin-debugger \
+  default-jre vim "$libCppdev" "$libCppdoc" "$libCppdbg" stl-manual gcc-doc c++-annotations \
+  libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 libxss1 libappindicator1 libindicator7 \
+  fonts-liberation kio-gdrive android-studio atom htop netbeans nodejs npm sublime-text-installer terminator \
+  libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-kde kate skanlite 
   
 if [ $? != 0 ]; then
   echo ""
@@ -111,7 +108,6 @@ echo "==============================================================="
 echo "=========== uninstalling some unnecessary packages ============"
 echo "==============================================================="
 
-apt-get -y purge libreoffice-base libreoffice-draw libreoffice-math
 apt-get -y autoremove
 apt-get -y clean
 
