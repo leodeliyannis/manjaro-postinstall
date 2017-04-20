@@ -68,12 +68,20 @@ echo "====================================================================="
 echo "================= fixing Java fonts antialiasing ===================="
 echo "====================================================================="
 cat <<EOF >> /etc/environment
-_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+
+### Java fonts antialiasing settings
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true \
+  -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel \
+  -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+JAVA_FONTS=/usr/share/fonts/TTF
+
 EOF
 
 cat <<EOF >> /etc/bash.bashrc
+
 ### Java options
 _SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS"
 unset _JAVA_OPTIONS
 alias java='java "$_SILENT_JAVA_OPTIONS"'
+
 EOF
