@@ -48,9 +48,9 @@ npm install -g ionic cordova
 echo "====================================================================="
 echo "=============== removing some unnecessary packages =================="
 echo "====================================================================="
-pacman -Rns steam-manjaro
-pacman -Qdtq | pacman -Rs -
-pacman -Sc
+pacman -Rn --noconfirm steam-manjaro
+pacman -Qdtq | pacman --noconfirm -Rns -
+pacman -Sc --noconfirm
 
 echo "====================================================================="
 echo "==================== optimizing pacman database ====================="
