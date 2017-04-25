@@ -8,5 +8,5 @@ cd UPFParqueInstall
 chmod u+x manjaroPostInstall.sh manjaroAurInstall.sh
 sudo ./manjaroPostInstall.sh
 ./manjaroAurInstall.sh
-cp Home/* ~/
+unzip homeSettings.zip -d ~/
 ```
