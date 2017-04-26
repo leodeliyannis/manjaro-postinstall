@@ -23,7 +23,7 @@ echo "========= installing development tools and needed packages =========="
 echo "====================================================================="
 pacman -S --noconfirm android-tools apache apache-ant asciinema atom bower \
   clang cmake codeblocks command-not-found eclipse-java emacs gcc-docs gdb git \
-  gvim htop jdk8-openjdk jre8-openjdk jre8-openjdk-headless kio-gdrive \
+  gvim htop jdk8-openjdk jre8-openjdk jre8-openjdk-headless kdesudo kio-gdrive \
   kolourpaint llvm mariadb mariadb-clients moc mtpfs netbeans net-tools nodejs \
   npm openjdk8-doc pgadmin3 php php-mcrypt php-pgsql php-gd pkgfile postgresql \
   psqlodbc python-xdg rhino ruby samba screenfetch sox sshfs tcc tcp_wrappers \
