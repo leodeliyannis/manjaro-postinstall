@@ -27,9 +27,9 @@ pacman -S --noconfirm android-tools apache apache-ant asciinema atom bower \
   kolourpaint llvm mariadb mariadb-clients moc mtpfs netbeans net-tools nodejs \
   npm openjdk8-doc pgadmin3 php php-mcrypt php-pgsql php-gd pkgfile postgresql \
   psqlodbc python-xdg rhino ruby samba screenfetch sox sshfs tcc tcp_wrappers \
-  terminator ttf-anonymous-pro ttf-ubuntu-font-family tmux traceroute valgrind \
-  vi vim vim-plugins wget wine wine-mono wine_gecko winetricks xournal youtube-dl \
-  xterm zenity
+  terminator three.js ttf-anonymous-pro ttf-ubuntu-font-family tmux traceroute \
+  valgrind vi vim vim-plugins wget wine wine-mono wine_gecko winetricks xournal \
+  youtube-dl xterm zenity
 
 if [ $? != 0 ]; then
     echo ""
