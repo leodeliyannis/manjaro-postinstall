@@ -21,8 +21,9 @@ pacman -Syyuu --noconfirm
 echo "====================================================================="
 echo "========= installing development tools and needed packages =========="
 echo "====================================================================="
-pacman -S --noconfirm android-tools apache apache-ant asciinema atom bower \
-  clang cmake codeblocks command-not-found eclipse-java emacs gcc-docs gdb git \
+pacman -S --noconfirm \
+  android-tools apache apache-ant asciinema atom bower clang cmake codeblocks \
+  command-not-found eclipse-java emacs firefox-i18n-pt-br gcc-docs gdb git \
   gvim htop jdk8-openjdk jre8-openjdk jre8-openjdk-headless kio-gdrive \
   kolourpaint llvm mariadb mariadb-clients moc mtpfs netbeans net-tools nodejs \
   npm openjdk8-doc pgadmin3 php php-mcrypt php-pgsql php-gd pkgfile postgresql \
@@ -38,17 +39,17 @@ if [ $? != 0 ]; then
 fi
 
 echo "====================================================================="
-echo "================= installing AngularJS and Ionic ===================="
+echo "====== installing Node-based APIs (Ionic, Angular, React, ...) ======"
 echo "====================================================================="
 npm install -g yo
 npm install -g generator-angular
 npm install -g bower grunt
 npm install -g ionic cordova
+npm install -g react-native-cli
 
 echo "====================================================================="
 echo "=============== removing some unnecessary packages =================="
 echo "====================================================================="
-pacman -Rn --noconfirm steam-manjaro
 pacman -Qdtq | pacman --noconfirm -Rns -
 pacman -Sc --noconfirm
 
