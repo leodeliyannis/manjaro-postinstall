@@ -21,16 +21,17 @@ pacman -Syyuu --noconfirm
 echo "====================================================================="
 echo "========= installing development tools and needed packages =========="
 echo "====================================================================="
-pacman -S --noconfirm \
-  android-tools apache apache-ant asciinema atom bower clang cmake codeblocks \
-  command-not-found eclipse-java emacs firefox-i18n-pt-br gcc-docs gdb git \
+pacman -S --noconfirm --needed \
+  android-tools apache apache-ant asciinema atom bower clang cmake \
+  codeblocks eclipse-jee emacs firefox-i18n-pt-br gcc-docs gdb git \
   gvim htop jdk8-openjdk jre8-openjdk jre8-openjdk-headless kio-gdrive \
-  kolourpaint llvm mariadb mariadb-clients moc mtpfs netbeans net-tools nodejs \
-  npm openjdk8-doc pgadmin3 php php-mcrypt php-pgsql php-gd pkgfile postgresql \
-  psqlodbc python-xdg rhino ruby samba screenfetch sox sshfs tcc tcp_wrappers \
-  terminator three.js ttf-anonymous-pro ttf-ubuntu-font-family tmux traceroute \
-  valgrind vi vim vim-plugins wget wine wine-mono wine_gecko winetricks xournal \
-  youtube-dl xterm zenity
+  kolourpaint llvm mariadb mariadb-clients moc mtpfs netbeans net-tools \
+  nodejs npm openjdk8-doc pepper-flash pgadmin3 php php-mcrypt php-pgsql \
+  php-gd pkgfile postgresql psqlodbc python-xdg rhino ruby samba \
+  screenfetch sox sshfs tcc tcp_wrappers terminator three.js \
+  ttf-anonymous-pro ttf-ubuntu-font-family tmux traceroute valgrind vi \
+  vim-plugins wget wine wine-mono wine_gecko winetricks xournal youtube-dl \
+  xterm zenity
 
 if [ $? != 0 ]; then
     echo ""
