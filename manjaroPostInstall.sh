@@ -23,7 +23,7 @@ echo "========= installing development tools and needed packages =========="
 echo "====================================================================="
 pacman -S --noconfirm --needed \
   android-tools apache apache-ant asciinema atom bower clang cmake \
-  codeblocks eclipse-jee emacs firefox-i18n-pt-br gcc-docs gdb git \
+  codeblocks eclipse-jee emacs firefox-kde-i18n-pt-br gcc-docs gdb git \
   gvim htop jdk8-openjdk jre8-openjdk jre8-openjdk-headless kio-gdrive \
   kolourpaint llvm mariadb mariadb-clients moc mtpfs netbeans net-tools \
   nodejs npm openjdk8-doc pepper-flash pgadmin3 php php-mcrypt php-pgsql \
