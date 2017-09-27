@@ -1,8 +1,9 @@
 echo "====================================================================="
 echo "======= installing packages from AUR (Arch Users Repository) ========"
 echo "====================================================================="
-yaourt -S --noconfirm android-studio astah-community google-chrome \
-  sublime-text-dev ttf-mac-fonts ttf-monaco ttf-ms-fonts xampp
+yaourt -S --noconfirm --needed \
+  android-studio astah-community google-chrome mattercontrol \
+  sublime-text-dev ttf-monaco wps-office
 if [ $? != 0 ]; then
   echo ""
   echo "ERROR running yaourt -- must check if all packages are available"
