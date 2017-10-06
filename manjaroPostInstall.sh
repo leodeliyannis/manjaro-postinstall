@@ -25,13 +25,14 @@ pacman -S --noconfirm --needed \
   android-tools apache apache-ant arduino arduino-avr-core asciinema atom \
   clang cmake codeblocks eclipse-jee emacs firefox-kde-i18n-pt-br freecad \
   gcc-docs gdb git gvim htop jdk8-openjdk jre8-openjdk jre8-openjdk-headless \
-  kio-gdrive kolourpaint llvm mariadb mariadb-clients moc mtpfs netbeans \
-  net-tools nodejs npm openjdk8-doc pepper-flash pgadmin3 php php-mcrypt \
-  php-pgsql php-gd pkgfile postgresql psqlodbc python-xdg rhino ruby samba \
-  screenfetch sox sshfs tcc tcp_wrappers terminator three.js thunderbird-kde \
-  ttf-anonymous-pro ttf-ubuntu-font-family tmux traceroute valgrind vi \
-  vim-plugins wget wine wine-mono wine_gecko winetricks xournal youtube-dl \
-  xterm zenity
+  kio-gdrive kolourpaint linux49-headers linux49-virtualbox-host-modules \
+  llvm mariadb mariadb-clients moc mtpfs netbeans net-tools nodejs npm \
+  openjdk8-doc pepper-flash pgadmin3 php php-mcrypt php-pgsql php-gd pkgfile \
+  postgresql psqlodbc python-xdg rhino ruby samba screenfetch sox sshfs tcc \
+  tcp_wrappers terminator three.js thunderbird-kde ttf-anonymous-pro \
+  ttf-ubuntu-font-family tmux traceroute valgrind vi vim-plugins virtualbox \
+  virtualbox-guest-iso virtualbox-host-dkms wget wine wine-mono wine_gecko \
+  winetricks xournal youtube-dl xterm zenity
 
 if [ $? != 0 ]; then
     echo ""
@@ -91,6 +92,11 @@ echo "====================================================================="
 systemctl enable postgresql.service &&
 su - postgres -c "initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'" &&
 systemctl restart postgresql.service &&
+
+echo "====================================================================="
+echo "====================== loading module vboxdrv ======================="
+echo "====================================================================="
+modprobe vboxdrv
 
 echo "====================================================================="
 echo "=============== Installation completed successfully! ================"
