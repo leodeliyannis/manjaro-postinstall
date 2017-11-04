@@ -1,11 +1,4 @@
-# UPFParqueInstall
-Script de preparação do ambiente de desenvolvimento das máquinas da Fábrica de Software do UPF Parque
+# manjaro-postinstall
 
-Modo de instalação:
-```bash
-git clone https://github.com/leodeliyannis/UPFParqueInstall.git
-cd UPFParqueInstall
-chmod u+x manjaroPostInstall.sh manjaroAurInstall.sh
-sudo ./manjaroPostInstall.sh
-./manjaroAurInstall.sh
-```
+Post-installation scripts and routines for Manjaro
+
